@@ -4,7 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const utilityRouter = require('./routes/UR');
 const PORT = process.env.PORT;
-const MONGO_URl = process.env.MONGO_URl;
+const MONGO_URL = process.env.MONGO_URL;
 
 //Express app
 const app = express();
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Mongodb
-mongoose.connect(MONGO_URl)
+mongoose.connect(`${MONGO_URL}`)
 .then(() => {console.log("Mongoose connected")})
 .catch((err) => {console.log("Mongoose Error:", err)});
 

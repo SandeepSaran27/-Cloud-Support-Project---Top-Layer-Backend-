@@ -1,11 +1,8 @@
 const itemModel = require('../model/dataModel');
 const mongoose = require("mongoose");
 
-function sayHii(req, res){
-    return res.json({msg : 'Hii'});
-}
-
 async function handleLogIN(req, res) {
+    console.log("handleLogIN");
     const userKey = req.body.key;
     const KEY = '44445555';
     if (userKey != KEY) {
@@ -16,6 +13,7 @@ async function handleLogIN(req, res) {
 }
 
 async function updateActiveStatus(req, res) {    
+    console.log("updateActiveStatus st");
     if (req.body) {
         const activeStatus = req.body.activeStatus;
         const isActiveExits = await itemModel.findOne({ itemName: 'activeStatus' });
@@ -33,6 +31,7 @@ async function updateActiveStatus(req, res) {
             });
         }
         //console.log("DBres:", DBres);
+        console.log("updateActiveStatus end");
         return res.json({msg : 'Active status updated'});
     }else{
         //console.log("Error at controler@321");
@@ -41,6 +40,7 @@ async function updateActiveStatus(req, res) {
 }
 
 async function isActive(req, res) {
+    console.log("isActive");
     let DBres;
     DBres = await itemModel.findOne({
         itemName: 'activeStatus',
@@ -59,6 +59,7 @@ async function isActive(req, res) {
 }
 
 async function updateURL(req, res) {
+    console.log("update URL st");
     if (req.body) {
         const URL = req.body.url;
         const isURLExits = await itemModel.findOne({ itemName: 'url' });
@@ -76,11 +77,13 @@ async function updateURL(req, res) {
             });
         }
         //console.log("DBres:", DBres);
+        console.log("update URL end");
         return res.json({msg : 'URL updated'});
     }
 }
 
 async function getUrl(req, res) {
+    console.log("Get URL");
     let DBres;
     DBres = await itemModel.findOne({
         itemName: 'url',
@@ -100,5 +103,4 @@ module.exports = {
     isActive,
     updateURL,
     getUrl,
-    sayHii,
 }
