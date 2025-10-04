@@ -6,10 +6,13 @@ const {
     updateActiveStatus,
     isActive,
     updateURL,
-    getUrl
+    getUrl,
+    sayHii,
 } = require("../controler/UR");
 
 //Routes
+Router.get('/', sayHii)
+
 Router.post('/login', handleLogIN);
 
 Router.post('/active-status', updateActiveStatus);

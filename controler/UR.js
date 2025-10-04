@@ -1,6 +1,10 @@
 const itemModel = require('../model/dataModel');
 const mongoose = require("mongoose");
 
+function sayHii(req, res){
+    return res.json({msg : 'Hii'});
+}
+
 async function handleLogIN(req, res) {
     const userKey = req.body.key;
     const KEY = '44445555';
@@ -96,4 +100,5 @@ module.exports = {
     isActive,
     updateURL,
     getUrl,
+    sayHii,
 }
