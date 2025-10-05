@@ -11,7 +11,7 @@ const {
 } = require("../controler/UR.js");
 
 //Routes
-Router.get('/', sayHii)
+Router.get('/', sayHii);
 
 Router.post('/login', handleLogIN);
 
