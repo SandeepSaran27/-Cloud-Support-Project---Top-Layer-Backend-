@@ -8,7 +8,7 @@ const {
     updateURL,
     getUrl,
     sayHii,
-} = require("../controler/UR");
+} = require("../controler/UR.js");
 
 //Routes
 Router.get('/', sayHii)

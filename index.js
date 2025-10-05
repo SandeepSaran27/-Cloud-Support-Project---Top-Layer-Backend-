@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const utilityRouter = require('./routes/UR');
+const utilityRouter = require('./routes/UR.js');
 const PORT = process.env.PORT;
 const MONGO_URL = process.env.MONGO_URL;
 

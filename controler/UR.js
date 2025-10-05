@@ -1,5 +1,9 @@
-const itemModel = require('../model/dataModel');
+const itemModel = require('../model/dataModel.js');
 const mongoose = require("mongoose");
+
+function sayHii(req, res){
+    return res.json({msg : 'Hii'});
+}
 
 async function handleLogIN(req, res) {
     console.log("handleLogIN");
@@ -103,4 +107,5 @@ module.exports = {
     isActive,
     updateURL,
     getUrl,
+    sayHii,
 }
